@@ -1,0 +1,56 @@
+{
+    "name": "tsengyuchen/bmptxt",
+    "description": "Convert text/image to BMP bitmap for label printers supporting EZPL protocol. Compatible with Laravel 10+, Yii2+, CodeIgniter 4+.",
+    "type": "library",
+    "keywords": ["bmp", "bitmap", "label", "printer", "ezpl", "ttf", "gd", "image"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tseng Yu Chen",
+            "email": "yuchen.tseng@eris.com.tw",
+            "homepage": "https://github.com/TsengYuChen"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "ext-gd": "*",
+        "ext-mbstring": "*",
+        "ext-sockets": "*",
+        "psr/simple-cache": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-strict-rules": "^1.5"
+    },
+    "suggest": {
+        "illuminate/support": "Required for Laravel 10+ adapter (^10.0|^11.0)",
+        "yiisoft/yii2": "Required for Yii2 adapter (^2.0)",
+        "codeigniter4/framework": "Required for CodeIgniter 4 adapter (^4.0)"
+    },
+    "autoload": {
+        "psr-4": {
+            "TsengYuChen\\BMPtxt\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TsengYuChen\\BMPtxt\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TsengYuChen\\BMPtxt\\Adapters\\Laravel\\BmptxtServiceProvider"
+            ],
+            "aliases": {
+                "Bmptxt": "TsengYuChen\\BMPtxt\\Adapters\\Laravel\\Facades\\Bmptxt"
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}
